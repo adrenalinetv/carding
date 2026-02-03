@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carding ₦3,000 Giveaway</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f7fb;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      max-width: 420px;
+      width: 100%;
+      padding: 28px 24px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #000000;
+    }
+
+    .subhead {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 22px;
+    }
+
+    .step {
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 14px;
+      margin: 0 0 6px;
+      color: #000;
+    }
+
+    .step p {
+      font-size: 13px;
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .copy-box {
+      background: #f0f4ff;
+      border: 2px dashed #c9d8ff;
+      padding: 14px;
+      border-radius: 10px;
+      margin: 12px 0 20px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .copy-box span {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 6px;
+      color: #000;
+    }
+
+    .copy-box small {
+      font-size: 12px;
+      color: #3b6cff;
+    }
+
+    .store-instruction {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: #fff;
+      background: #000;
+    }
+
+    .btn.secondary {
+      background: #e9efff;
+      color: #000;
+    }
+
+    .input-box {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .input-box label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    .continue-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      background: #3b6cff;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Get ₦3,000 on Carding 🎉</h1>
+    <div class="subhead">Follow the steps below to qualify for our WhatsApp giveaway.</div>
+
+    <div class="step">
+      <h3>Step 1: Copy the invitation code</h3>
+      <p>Tap the code below to copy it. You will paste this during registration.</p>
+    </div>
+
+    <div class="copy-box" onclick="copyCode()">
+      <span id="inviteCode">GET3K</span>
+      <small id="copyStatus">Tap to copy</small>
+    </div>
+
+    <div class="step">
+      <h3>Step 2: Download the Carding app</h3>
+      <p>Use the buttons below to install Carding on your phone.</p>
+    </div>
+
+    <div class="store-instruction">Choose your app store 👇</div>
+
+    <div class="buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.bh.carding" class="btn">Play Store</a>
+      <a href="https://apps.apple.com/ng/app/carding-sell-gift-cards/id6742431377" class="btn secondary">App Store</a>
+    </div>
+
+    <div class="step">
+      <h3>Step 3: Paste your personal referral code</h3>
+      <p>After registering on Carding, copy your own referral code and paste it below to enter the giveaway.</p>
+    </div>
+
+    <div class="input-box">
+      <label for="referralInput">Your Carding referral code</label>
+      <input type="text" id="referralInput" placeholder="e.g. CA3Y8J7" />
+    </div>
+
+    <a href="#" class="continue-btn" onclick="goToWhatsApp()">Join WhatsApp Giveaway Group</a>
+
+    <div class="note">
+      Join the channel and send your personal invitation code to receive a cash reward. <br />
+    </div>
+  </div>
+
+<script>
+  function copyCode() {
+    const code = document.getElementById("inviteCode").innerText;
+
+    // Try modern clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code).then(() => {
+        document.getElementById("copyStatus").innerText = "Copied ✓";
+      }).catch(() => {
+        fallbackCopy(code);
+      });
+    } else {
+      fallbackCopy(code);
+    }
+  }
+
+  function fallbackCopy(text) {
+    const tempInput = document.createElement("input");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999);
+
+    try {
+      document.execCommand("copy");
+      document.getElementById("copyStatus").innerText = "Copied ✓";
+    } catch (err) {
+      document.getElementById("copyStatus").innerText = "Long-press to copy";
+    }
+
+    document.body.removeChild(tempInput);
+  }
+
+  function goToWhatsApp() {
+    const input = document.getElementById("referralInput").value.trim();
+    const pattern = /^[A-Z0-9]{6,8}$/i;
+
+    if (!pattern.test(input)) {
+      alert("Please enter a valid Carding referral code to continue.");
+      return;
+    }
+
+    window.location.href = "https://whatsapp.com/channel/0029VbAQppMD8SDt5bUiBV2p";
+  }
+</script>
+</body>
+</html>
+
